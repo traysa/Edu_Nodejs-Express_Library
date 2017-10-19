@@ -1,0 +1,119 @@
+What is Node.js?
+- Open Source server side runtime environment
+- Truly cross platform
+- Uses JavaScript as language
+- Like .NET is a runtime environment for e.g. C#
+- Interpreter
+
+What is Express?
+- Web Development Framework for Node.js
+- Lightweight
+- NPM package
+
+What is the Node Package Management System (NPM)?
+- Handles all packages for node.js applications
+- Deals with updates and versions of packages
+- Install packages with 'npm install <package> --save', where --save will
+  register the package in the package.json file and loads the dependencies into
+  the local directory 'node_modules'
+
+What is the package.json file?
+- Keeps track of all dependencies and packages for the node application
+
+How can I manage package versions in NPM?
+- ^ = NPM installs the newest package with the same major version (^4.x.x)
+- ~ = NPM installs the newest package with the same major and minor version (~4.13.x)
+- No upgrades if just version number is set. This should be done to control upgrades.
+- Which version is in use can be seen in the package.json file of the dependency
+  in the local dependency directory 'node_modules'
+
+Where can I get website templates?
+- www.bootstrapzero.com
+
+What is bower?
+- Package manager for the web
+- Frontend package management system while NPM is backend package management
+  system
+- Installed with NPM ('npm install bower -g'; installs bower globally so it can
+  be accessed via the command line)
+- Flat package hierarchy: does not install dependencies underneath
+- Similar to NPM
+  - npm install = bower install
+  - package.json = bower.json
+  - 'node_modules' directory = 'bower_components' directory
+- In the app directory initialize bower ('bower init'), which will create a
+  bower.json file
+- If not configured otherwise bower will place dependencies into the directory
+  'bower_components'
+- Create '.bowerrc' file to configure the placement of bower dependencies by
+  e.g. '{"directory": "public/lib"}'
+
+Is bower still in use (2017)?
+- Is outta fashion
+- Most people use npm for front- and backend
+
+What is Bootstrap? (https://stackoverflow.com/questions/14546709/what-is-bootstrap)
+- Bootstrap is the most popular HTML, CSS, and JS framework for developing
+  responsive, mobile first projects on the web.
+- Open-source Javascript Front-end-framework developed by the team at Twitter
+- Combination of HTML, CSS, and Javascript code designed to help build UI components
+- Supports both HTML5 and CSS3
+- Free collection of tools for creating a websites and web applications
+- Contains HTML and CSS-based design templates for typography, forms, buttons,
+  navigation and other interface components, as well as optional JavaScript extensions
+- Some Reasons for programmers preferred Bootstrap Framework
+  - Easy to get started
+  - Great grid system
+  - Base styling for most HTML elements(Typography,Code,Tables,Forms,Buttons,Images,Icons)
+  - Extensive list of components
+  - Bundled Javascript plugins
+
+What are templating engines?
+- Engine to allow express to built our html pages
+- Embeddes information from e.g. an API or database into the html
+- Different templating engines:
+  - Jade
+  - Handlebars
+  - EJS
+
+Are templating engines still used today (2017)?
+- Out of fashion due to the REST movement
+- templates are not built up server-side anymore
+- Advantage of decoupling front- and backend due to different device types
+
+What is gulp?
+- Gulp is a task manager for web projects
+- Installed with NPM
+- Example tasks:
+  - With gulp-jshint code quality enforcement is executed
+  - With gulp-jscs code style enforcement is executed
+  - With wiredep dependencies can be injected into source code
+  - With gulp-inject local dependencies can be injected into source code
+
+Is gulp still in use (2017)?
+- Is outta fashion
+- gulpfiles get to big and slow
+- today alternatives: webpack
+
+How to set up a node.js + express project?
+- Create directory (e.g. 'library')
+- Create a javascript file in the new directory (e.g. 'app.js')
+- In the javascript file pull in the package 'express'
+- In the new directory initialize npm ('npm init'), which will create a
+  package.json file
+- In the new directory initialize bower ('bower init'), which will create a
+  bower.json file
+- In the directory create 2 subdirectories 'public' and 'src'
+- The 'public' directory will be set as static directory in the application
+  javascript file by "app.use(express.static('public'));"
+- In the 'public' directory place your local .css and .js files in according
+  subdirectories 'css' and 'js'
+- Configure bower to place its dependencies in 'public/lib' in the .bowerrc file
+- In the 'src' directory create 2 subdirectories 'views' and 'routes'
+- In the 'views' directory place your templating files (html/ejs/jade/hbs/...)
+
+How can I start my web application?
+- Start javascript directly (e.g. 'node app.js')
+- Configure start script in the package.json file (e.g. '"start": "node app.js"')
+  and run 'npm start'
+- If gulp is set up, with task (e.g. 'gulp serve')

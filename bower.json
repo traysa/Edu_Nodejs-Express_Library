@@ -1,0 +1,41 @@
+{
+  "name": "library",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "traysa"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0"
+  },
+  "//": [
+    "The main in the bower files of the bootstrap and font-awesome dependencies",
+    "is overwritten, so the css files are included"
+  ],
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.css",
+        "less/bootstrap.less"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "less/font-awesome.less",
+        "css/font-awesome.min.css",
+        "scss/font-awesome.scss"
+      ]
+    }
+  }
+}

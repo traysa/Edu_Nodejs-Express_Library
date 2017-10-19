@@ -1,0 +1,22 @@
+<!-- Handlebars Template
+- Html code
+- Variables can be used with double curly braces
+- Built-in functions wit double curly braces and #
+- Can include Javascript code
+- Issue: Angular code also uses double curly braces
+ -->
+<html>
+  <head>
+
+  </head>
+  <body>
+    <h1>
+      {{title}}
+    </h1>
+    <ul>
+      {{#each list}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+  </body>
+</html>
