@@ -29,12 +29,14 @@ var nav = [{
         Text: 'Authors'
     }];
 
-// Router files for books and authors
+// Router files for books and authors and admins
 var bookRouter = require('./src/routes/bookRoutes')(nav);
 var authorRouter = require('./src/routes/authorRoutes')(nav);
+var adminRouter = require('./src/routes/adminRoutes')(nav);
 
 app.use('/Books', bookRouter);
 app.use('/Authors', authorRouter);
+app.use('/Admin', adminRouter);
 
 // When on Home Route a function should be executed
 // Parameters:

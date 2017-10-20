@@ -1,0 +1,42 @@
+[
+  {
+    "firstname": "Daniel",
+    "lastname": "White",
+    "birthday": "24.08.1944"
+  },
+  {
+    "firstname": "Tom",
+    "lastname": "Stone",
+    "birthday": "30.06.1984"
+  },
+  {
+    "firstname": "Jonathan",
+    "lastname": "Franzen",
+    "birthday": "19.03.1933"
+  },
+  {
+    "firstname": "Michael",
+    "lastname": "Allin",
+    "birthday": "16.02.1958"
+  },
+  {
+    "firstname": "Guy Gavriel",
+    "lastname": "Kay",
+    "birthday": "25.12.1965"
+  },
+  {
+    "firstname": "Ἡρόδοτος",
+    "lastname": "",
+    "birthday": "01.10.1987"
+  },
+  {
+    "firstname": "Gene",
+    "lastname": "Wilder",
+    "birthday": "08.09.1976"
+  },
+  {
+    "firstname": "Christian",
+    "lastname": "Smith",
+    "birthday": "25.09.1992"
+  }
+]
