@@ -6,26 +6,6 @@ var express = require('express'); // A refernce to 'express'
 var app = express();
 
 //------------------------------------------------------------------------------
-// Database connection
-//------------------------------------------------------------------------------
-var sql = require('mssql');
-var config = {
-    user: '',
-    password: '',
-    server: '', // You can use 'localhost\\instance' to connect to named instance
-    database: '',
-
-    options: {
-        encrypt: true // Use this if you're on Windows Azure
-    }
-};
-
-// Open database and log error if one occurs
-sql.connect(config, function (err) {
-    console.log(err);
-});
-
-//------------------------------------------------------------------------------
 // Static directory
 //------------------------------------------------------------------------------
 
