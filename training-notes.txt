@@ -117,3 +117,18 @@ How can I start my web application?
 - Configure start script in the package.json file (e.g. '"start": "node app.js"')
   and run 'npm start'
 - If gulp is set up, with task (e.g. 'gulp serve')
+
+What is passport?
+- Fairly standard authentication framework in node.js
+- Middleware
+- Simple authentication:
+  - Passport.initialize()
+  - Passport.session()
+    - For putting/getting user object into/from the session
+    - Sits on top of express session (install via 'npm install express-session')
+- User Functions:
+  - passport.serializeUser(): Set user into the session for later use
+  - passport.deserializeUser(): Pull user from of the session
+  - passport-local:
+    - Strategy for storing user and password in a local database
+    - Alternative strategies: passport-google, passport-facebook, passport-twitter ... (OAuth)

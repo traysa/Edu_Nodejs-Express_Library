@@ -2,6 +2,26 @@
 // provides a robust set of features for web and mobile applications.
 var express = require('express'); // A refernce to 'express'
 
+//------------------------------------------------------------------------------
+// Get ready for Authentication
+//------------------------------------------------------------------------------
+// BodyParser automaticall parses body of incoming request and creates a JSON
+// format out of it; Operates a s middleware
+var bodyParser = require('body-parser');
+
+// Parser for session cookies
+var cookieParser = require('cookie-parser');
+
+// Authentication middleware
+var passport = require('passport');
+
+// Express session, which passport will use to store user information
+var session = require('express-session');
+
+//------------------------------------------------------------------------------
+// Start
+//------------------------------------------------------------------------------
+
 // Create an instance of express
 var app = express();
 
@@ -15,6 +35,21 @@ var app = express();
 // Test if it works by opening 'localhost:3000\css\styles.css'
 app.use(express.static('public'));
 // app.use('views', './src/views');
+
+//------------------------------------------------------------------------------
+// Set up middleware
+//------------------------------------------------------------------------------
+
+// Apply bodyParser middleware
+// bodyParser.json looks if the body of a request contains JSON and parses it to
+// a req.body object; bodyParser.urlencoded does the same but with url encoded
+// bodies
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+// Middleware for session handling and authentication
+app.use(cookieParser());
+app.use(session({secret: 'library'})); // secret can be anything
+require('./src/config/passport')(app); // Call passport.js; By passing app, middleware can be extended to app in passport.js
 
 //------------------------------------------------------------------------------
 // Routing
@@ -33,10 +68,12 @@ var nav = [{
 var bookRouter = require('./src/routes/bookRoutes')(nav);
 var authorRouter = require('./src/routes/authorRoutes')(nav);
 var adminRouter = require('./src/routes/adminRoutes')(nav);
+var authRouter = require('./src/routes/authRoutes')(nav);
 
 app.use('/Books', bookRouter);
 app.use('/Authors', authorRouter);
 app.use('/Admin', adminRouter);
+app.use('/Auth', authRouter);
 
 // When on Home Route a function should be executed
 // Parameters:

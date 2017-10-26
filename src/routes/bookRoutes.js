@@ -4,6 +4,15 @@ var mongodb = require('mongodb').MongoClient; // Only pull piece 'Mongo Client'
 var objectId = require('mongodb').ObjectID; // Deals with mongodb object ids
 
 var router = function(nav) {
+    // Securing multiple routes
+    // In order to not allow user to access books when he is not logged in, add
+    // middleware to entire bookRouter
+    bookRouter.use(function(req,res, next) {
+        if (!req.user) { // if not logged in, redirect to home
+            res.redirect('/'); // redirect response, you cannot redirect request
+        }
+        next(); // otherwise continue
+    });
 
     bookRouter.route('/')
         .get(function(req, res) {
